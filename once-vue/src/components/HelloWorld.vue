@@ -91,6 +91,11 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String
+  },
+  created() {
+    api.getHello().then(response => {
+      this.msg = response.data;
+    });
   }
 };
 </script>
