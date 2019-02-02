@@ -10,6 +10,6 @@ axios.defaults.headers.post["Content-Type"] = "application/json";
 
 export default {
     getHello() {
-      return axios.get("/helloworld");
+      return axios.get("/hello");
     },
 };
