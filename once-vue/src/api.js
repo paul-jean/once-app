@@ -8,6 +8,10 @@ axios.defaults.baseURL = API_URL;
 // POST with JSON content type
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
+// `withCredentials` indicates whether or not cross-site
+// Access-Control requests should be made using credentials.
+axios.defaults.withCredentials = true;
+
 export default {
     getHello() {
       return axios.get("/hello");

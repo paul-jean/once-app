@@ -46,3 +46,7 @@ rails new once-api-rails --skip-action-cable --skip-action-mailer --skip-active-
 ```
 bin/rails server
 ```
+
+# TODO
+
+- figure out CORS configuration with `rack-cors`
