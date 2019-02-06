@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-hello_world = HelloWorld.create!(
+hello = Hello.create!(
     greeting: 'Hello World'
 )

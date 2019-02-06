@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div>
+    <HelloTitle initialHello="Hello before the AJAX call"></HelloTitle>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -87,20 +87,16 @@
 </template>
 
 <script>
-import api from "@/api";
+import HelloTitle from './HelloTitle.vue'
 
 export default {
   name: "HelloWorld",
-  props: {
-    msg: String
-  },
-  created() {
-    api.getHello().then(response => {
-      this.msg = response.data;
-    });
+  components: {
+    HelloTitle
   }
 };
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

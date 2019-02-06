@@ -1,6 +1,6 @@
 class HelloController < ApplicationController  
     def index
-      @hello = HelloWorld.all
+      @hello = Hello.all
     end
 end
  
