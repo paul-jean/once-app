@@ -13,7 +13,7 @@ axios.defaults.headers.post["Content-Type"] = "application/json";
 axios.defaults.withCredentials = true;
 
 export default {
-    getHello() {
-      return axios.get("/hello");
-    },
+  getHello() {
+    return axios.get("/api/v1/posts/1");
+  },
 };

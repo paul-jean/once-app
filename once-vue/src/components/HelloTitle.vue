@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ helloMsg }}</h1>
   </div>
 </template>
 
@@ -9,26 +9,25 @@ import api from "@/api";
 
 export default {
   name: "HelloTitle",
-  props: ["initialHello"],
+  props: ["initialMsg"],
   data: function() {
     return {
-      initialHello: this.initialHello,
-      msg: this.initialHello
+      helloMsg: this.initialMsg
     };
   },
   watch: {
-    msg: function(newMsg) {
-      this.msg = newMsg;
+    helloMsg: function(newMsg) {
+      this.helloMsg = newMsg;
     }
   },
   methods: {
     getHelloTitle: function() {
       var vm = this;
       api.getHello().then(response => {
-        if (response.data) {
-          vm.msg = response.data;
+        if (response.data.data.body) {
+          vm.helloMsg = response.data.data.body;
         } else {
-          vm.msg = "No data from the AJAX call";
+          vm.helloMsg = "No data from the AJAX call";
         }
       });
     }
