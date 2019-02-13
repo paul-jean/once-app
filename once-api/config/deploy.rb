@@ -1,9 +1,9 @@
 # Change these
-server 'your_server_ip', port: your_port_num, roles: [:web, :app, :db], primary: true
+server '134.209.4.183', port: 80, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@example.com:username/appname.git'
-set :application,     'appname'
-set :user,            'deploy'
+set :repo_url,        'git@github.com:paul-jean/once-app.git'
+set :application,     'onceapp'
+set :user,            'rails'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
@@ -43,7 +43,7 @@ namespace :puma do
     end
   end
 
-  before :start, :make_dirs
+  before :start, :gg
 end
 
 namespace :deploy do
