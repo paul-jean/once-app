@@ -9,7 +9,11 @@ install_plugin Capistrano::SCM::Git
 set :rvm_type, :system
 set :repo_tree, 'once-api'
 
-require 'capistrano/rails'
+# don't use the asset pipeline for this api-only app:
+# require 'capistrano/rails'
+# instead just use the migrations portion:
+# see https://stackoverflow.com/questions/41052204/deploy-raise-error-dont-know-how-to-build-task-assetsprecompile-capistran
+require 'capistrano/rails/migrations'
 require 'capistrano/bundler'
 require 'capistrano/rvm'
 require 'capistrano/puma'
