@@ -45,7 +45,7 @@ namespace :puma do
     end
   end
 
-  before :start, :gg
+  before :start, :make_dirs
 end
 
 namespace :deploy do
@@ -75,8 +75,8 @@ namespace :deploy do
     end
   end
 
-  before :starting,     :check_revision
-  # after  :finishing,    :compile_assets
+  #before :starting,     :check_revision
+  #after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
