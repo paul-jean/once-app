@@ -4,7 +4,7 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-default: &default
+mysql: &default
   adapter: mysql2
   username: onceapp
   password: 123456
@@ -13,9 +13,13 @@ default: &default
   host: 127.0.0.1
   port: 8889
 
-development:
-  <<: *default
+development: &default
+  adapter: postgresql
+  encoding: unicode
   database: onceapp
+  pool: 5
+  username: pauljean # FIXME
+  password:
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
